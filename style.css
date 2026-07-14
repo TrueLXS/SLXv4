@@ -1,0 +1,256 @@
+:root {
+    --w: 45%;
+}
+
+@media screen and (max-width: 1000px) {
+    :root {
+        --w: 90%;
+    }
+}
+
+@font-face {
+    font-family: RainyHearts;
+    src: url("./assets/rainyhearts.ttf");
+}
+
+@font-face {
+    font-family: SimpleSquare;
+    src: url("./assets/ST-SimpleSquare.otf");
+}
+
+body {
+    background-image: url(assets/Aztec.gif);
+    background-size: calc(100vw / 3) auto;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.Card {
+    outline: 2px solid #ddd;
+    background-color: #000;
+    margin-bottom: 15px;
+    width: var(--w);
+    max-height: 500px;
+}
+
+#BigCard img {
+    width: 100%;
+}
+
+.Card > div:not(.CardTop) {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.Card > div img {
+    width: 15%;
+}
+
+.Card * {
+    font-family: RainyHearts;
+    color: #ddd;
+    font-size: 20px;
+}
+
+#TopBar {
+    display: flex;
+    align-items: flex-end;
+    justify-content: space-between;
+    width: var(--w);
+}
+
+#Title {
+    font-family: SimpleSquare;
+    color:#ddd;
+    font-size: 32px;
+    margin: 0;
+    padding: 0;
+    text-align: left;
+    text-shadow: 0 0 8px #000;
+    user-select: none;
+}
+
+#LinksBar {
+    outline: 2px solid #ddd;
+    background-color: #000;
+}
+
+#LinksBar img {
+    width:  16px;
+    height: 16px;
+    margin: 5px;
+    margin-left: 10px;
+}
+
+@keyframes WelcomeAnim {
+    0% {
+        transform: rotate(0deg);
+        font-size: 24px;
+        color: rgb(255, 150, 150);
+    }
+    33% {
+        transform: rotate(2deg);
+        font-size: 32px;
+        color: rgb(150, 255, 150);
+    }
+    66% {
+        transform: rotate(0deg);
+        font-size: 26px;
+        color: rgb(150, 150, 255);
+    }
+    100% {
+        transform: rotate(-2deg);
+        font-size: 24px;
+        color: rgb(255, 150, 150);
+    }
+}
+
+#Welcome {
+    font-size: 16px;
+    color: rgb(255, 150, 150);
+    animation: WelcomeAnim 1s infinite ease-out;
+}
+
+#WelcomeCard > div {
+    overflow-y: hidden;
+    height: 100px;
+}
+.CardRead h1,
+#AboutMe h1 {
+    text-align: center;
+    cursor: pointer;
+    user-select: none;
+    font-size: 24px;
+}
+.CardRead h1:hover,
+#AboutMe h1:hover {
+    color: #9ff;
+}
+.CardRead h1:active,
+#AboutMe h1:active {
+    color: #9f9;
+}
+
+.CardRead > div,
+#AboutMe > div {
+    overflow: hidden;
+}
+
+.CardText,
+#AboutMeText {
+    width: 80%;
+    padding: 15px;
+}
+.CardText p,
+#AboutMeText p {
+    font-size: 26px;
+}
+
+#Footer {
+    margin-bottom: 150px;
+}
+#Footer p {
+    text-align: center;
+    width: 100%;
+}
+
+#Footer img {
+    width: 50%;
+    margin: 0 auto;
+}
+
+.Card:hover {
+    background-color: #030303;
+}
+
+
+.CardTextDiv {
+    height: 0px;
+    outline: 1px solid #ddd;
+    transition: 0.2s;
+}
+
+#BigCardContainer {
+    display: flex;
+    width: var(--w);
+    justify-content: space-between;
+}
+
+#BigCardContainer .Card {
+    width: 49%;
+}
+
+#LatestNews {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+#LatestNews h1 {
+    font-size: 25px;
+}
+
+#LatestNews a {
+    color: rgb(61, 61, 255);
+}
+#LatestNews a:hover {
+    color: rgb(112, 112, 255);
+}
+#LatestNews a:visited {
+    color: rgb(165, 69, 255);
+}
+
+.identi {
+    font-size: small;
+}
+
+#LatestNews p {
+    padding: 0;
+    margin: 0;
+}
+
+.CardTop {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    cursor: pointer;
+}
+
+.CardTop h1 {
+    margin: 15px;
+}
+
+.CardText {
+    width: 100%;
+}
+
+/* MODERN MARQUEE APPROACH -------------- */
+.marquee-container {
+    overflow: hidden;
+    white-space: nowrap;
+    background: none;
+}
+
+.marquee-text {
+    display: inline-block;
+    padding-left: 100%;
+    animation: marquee 5s linear infinite;
+}
+
+/* The animation loop */
+@keyframes marquee {
+    0%   { transform: translate(0, 0); }
+    100% { transform: translate(-100%, 0); }
+}
+@media (prefers-reduced-motion: reduce) {
+    .marquee-text {
+        animation: none;
+        padding-left: 0;
+        white-space: normal;
+    }
+}
+/* --------------------------------------------------- */
